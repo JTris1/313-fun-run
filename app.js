@@ -4,8 +4,10 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 
+// Route files
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
+const runsRouter = require('./routes/runs');
 
 const app = express();
 
@@ -19,6 +21,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// Routes
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/runs', runsRouter);
