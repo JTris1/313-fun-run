@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-// GET Available Runs page
+// GET available Runs page
 router.get('/', function(req, res, next) {
     res.render('index', { title: 'Available Runs' });
 });
