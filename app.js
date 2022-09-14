@@ -1,3 +1,4 @@
+require('app-module-path').addPath(__dirname);
 const createError = require('http-errors');
 const express = require('express');
 const path = require('path');
