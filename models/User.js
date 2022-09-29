@@ -1,10 +1,10 @@
 const { Model, DataTypes, Sequelize } = require('sequelize');
 const sequelize = require('services/database');
 
-class Users extends Model {}
+class User extends Model {}
 
 // Initialize the table connected to the attributes
-Users.init({
+User.init({
     first_name: {
         type: DataTypes.STRING
     },
@@ -24,4 +24,4 @@ Users.init({
     timestamps: false       // Ignores CREATEDAT/UPDATEDAT
 });
 
-module.exports = Users;
+module.exports = User;

@@ -9,8 +9,15 @@
     <%- include ('../header.ejs') %> 
     <h1><%= first_name + " " + last_name %></h1>
     <p>Email: <%= email %></p>
-    <p>Gender: <%= gender %></p>
+    <p>Gender: <%= gender %></p> <br>
     
+    <h3>Associated Runs</h3>
+
+    <ul>
+      <% run.forEach( (run) => { %>
+        <li><a href="/runs/<%= run.id %>"><%= run.name %></a></li>
+      <% }); %>
+    </ul>
 
     <%- include('../footer.ejs') %> 
 

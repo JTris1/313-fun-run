@@ -12,8 +12,14 @@
     <p>Date: <%= date %></p>
     <p>City: <%= city %></p>
     <p>State: <%= state %></p>
-    <a href="<%= url %>">View more here</a>
+    <a href="<%= url %>">View more here</a> <br> <br> <br>
     
+    <h3>Associated Users</h3>
+    <ul>
+      <% user.forEach( (user) => { %>
+        <li><a href="/users/<%= id %>"><%= user.first_name %>  <%= user.last_name %></a></li>
+      <% }); %>
+    </ul>
 
     <%- include('../footer.ejs') %> 
 

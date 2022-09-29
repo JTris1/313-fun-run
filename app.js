@@ -5,7 +5,7 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 
-const db_associations = require("services/db_associations")();
+const db_associations = require('services/db_associations')();
 
 // Route files
 const indexRouter = require('./routes/index');

@@ -4,7 +4,7 @@ const sequelize = require('services/database');
 class Registration extends Model {}
 
 // Initialize the table connected to the attributes
-Runs.init({
+Registration.init({
     user_id: {
         type: DataTypes.INTEGER,
         primaryKey: true
@@ -18,8 +18,8 @@ Runs.init({
     }
 }, {
     sequelize,
-    modelName: 'registration', // THIS IS THE NAME OF THE TABLE IN THE DATABASE
-    tableName: 'registration',
+    modelName: 'registrations', // THIS IS THE NAME OF THE TABLE IN THE DATABASE
+    tableName: 'registrations',
     timestamps: false       // Ignores CREATEDAT/UPDATEDAT
 });
 
