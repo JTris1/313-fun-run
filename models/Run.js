@@ -1,10 +1,10 @@
 const { Model, DataTypes, Sequelize } = require('sequelize');
 const sequelize = require('services/database');
 
-class Runs extends Model {}
+class Run extends Model {}
 
 // Initialize the table connected to the attributes
-Runs.init({
+Run.init({
     date: {
         type: DataTypes.STRING
     },
@@ -26,7 +26,8 @@ Runs.init({
 }, {
     sequelize,
     modelName: 'runs', // THIS IS THE NAME OF THE TABLE IN THE DATABASE
+    tableName: 'runs',
     timestamps: false       // Ignores CREATEDAT/UPDATEDAT
 });
 
-module.exports = Runs;
+module.exports = Run;

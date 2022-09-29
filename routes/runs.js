@@ -1,10 +1,11 @@
 const express = require('express');
-const runs = require('models/Run.js');
+const Runs = require('models/Run');
+const Users = require('models/User');
 const router = express.Router();
 
 // GET available Runs page
 router.get('/', async function(req, res, next) {
-    const run = await runs.findAll();
+    const run = await Runs.findAll();
     res.render('runs/', { 
         title: 'Available Runs',
         runList: run
@@ -13,8 +14,9 @@ router.get('/', async function(req, res, next) {
 
 router.get('/:id', async (req, res) => {
     const requestedId = req.params.id;
-    const run = await runs.findOne({
-        where: { id: requestedId }
+    const run = await Runs.findOne({
+        where: { id: requestedId },
+        include: [{model: Users, as: 'users'}]
     });
     
     res.render('runs/run', {
@@ -23,7 +25,9 @@ router.get('/:id', async (req, res) => {
         run_type: run.run_type,
         city: run.city,
         state: run.state,
-        url: run.url
+        url: run.url,
+        user: run.users,
+        id: req.params.id
     });
 });
 
