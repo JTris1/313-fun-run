@@ -20,6 +20,7 @@ Users.init({
 }, {
     sequelize,
     modelName: 'users', // THIS IS THE NAME OF THE TABLE IN THE DATABASE
+    tableName: 'users',
     timestamps: false       // Ignores CREATEDAT/UPDATEDAT
 });
 

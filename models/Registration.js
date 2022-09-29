@@ -6,10 +6,12 @@ class Registration extends Model {}
 // Initialize the table connected to the attributes
 Runs.init({
     user_id: {
-        type: DataTypes.INTEGER
+        type: DataTypes.INTEGER,
+        primaryKey: true
     },
     race_id: {
-        type: DataTypes.INTEGER
+        type: DataTypes.INTEGER,
+        primaryKey: true
     },
     registration_date: {
         type: DataTypes.DATE
@@ -17,6 +19,7 @@ Runs.init({
 }, {
     sequelize,
     modelName: 'registration', // THIS IS THE NAME OF THE TABLE IN THE DATABASE
+    tableName: 'registration',
     timestamps: false       // Ignores CREATEDAT/UPDATEDAT
 });
 

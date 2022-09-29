@@ -26,6 +26,7 @@ Runs.init({
 }, {
     sequelize,
     modelName: 'runs', // THIS IS THE NAME OF THE TABLE IN THE DATABASE
+    tableName: 'runs',
     timestamps: false       // Ignores CREATEDAT/UPDATEDAT
 });
 
